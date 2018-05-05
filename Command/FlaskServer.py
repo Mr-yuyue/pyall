@@ -1,4 +1,6 @@
-from flask import Flask,redirect
+# -*- coding: utf-8 -*-
+
+from flask import Flask,redirect,url_for,render_template
 
 app = Flask(__name__)
 
@@ -6,13 +8,16 @@ app = Flask(__name__)
 app.secret_key = 'HSUkai81;;a!?}{]/8^&(^'
 
 # 根路径
-@app.route('/')
+@app.route("/")
 def index():
     return "wait"
 
+
 @app.route("/main")
 def main():
-    return ""
+    return render_template('Pages/main.html')
+    # return "1111"
 
 if __name__ == '__main__':
+    # Flask.debug = 1  # 调试模式.
     app.run()
