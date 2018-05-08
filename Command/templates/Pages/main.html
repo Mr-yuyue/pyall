@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="{{url_for('static', filename='script/jquery-3.3.1.min.js')}}" ></script>
+    <script type="text/javascript" src="{{url_for('static', filename='script/jquery-3.3.1.min.js')}}"></script>
     <title></title>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            
+            $("#submit").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "command",
+                    dataType: "json",
+                    success: function (data) {
+
+                        console.log(data);
+                    },
+                    error: function (jqObj) {
+                        console.log(jqObj.status);
+                    }
+                });
+            });
         });
     </script>
 </head>
+
 <body>
-    
-    测试页面
+    <!-- 测试页面 -->
+    <textarea id="EditArea" rows="20" cols="60" style="float: left;"></textarea>
+    <textarea id="PrintArea" rows="20" cols="60" readonly="readonly" style="float: left; margin-left: 20px;"></textarea>
+    <div><input id="submit" type="button" value="提交" /></div>
 </body>
+
 </html>
