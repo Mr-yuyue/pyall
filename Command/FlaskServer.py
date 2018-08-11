@@ -12,14 +12,20 @@ app.secret_key = 'HSUkai81;;a!?}{]/8^&(^'
 def index():
     return "wait"
 
-
 @app.route("/main")
 def main():
     return render_template('Pages/main.html')
-    # return "1111"
+
+@app.route("/command", methods=['GET','POST'])
+def command():
+
+
+    
+    return "jsonshuju"
 
 if __name__ == '__main__':
-    # Flask.debug = 1  # 调试模式.
+    Flask.debug = 1  # 调试模式.
     app.run()
 
+# window修改
 # 再mac下修改1
