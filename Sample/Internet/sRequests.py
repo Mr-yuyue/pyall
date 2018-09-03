@@ -14,5 +14,5 @@ r = requests.post('https://www.zhihu.com/', data=postData, headers=headers, cook
 print(r.status_code)
 
 for cookie in r.cookies.items():
-    # print(r.cookies.get(cookie))
-    print(cookie)
+    print(r.cookies.get(cookie))
+    # print(cookie)
