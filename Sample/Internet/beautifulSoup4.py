@@ -17,5 +17,7 @@ soup = BeautifulSoup(html_str, 'lxml')  # from_encoding='utf-8'
 print(soup.name)
 print(soup.title) # 查找到的第一个标记
 print(soup.title.name)
+print(soup.p['class'])
+print(soup.p.get('class'))
 
 
